@@ -6,13 +6,10 @@
 }
 
 body{
-    background: #0f0f1a;
-    color: aqua;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-
 }
 
 .contenedor{
@@ -21,8 +18,8 @@ body{
     border-radius: 20px;
     width: 350px;
     text-align: center;
-    box-shadow: 00 30px rgb(150, 0,255,0.4)
-     }
+    box-shadow: 0 30px 60px rgba(0, 0, 255, 0.4);
+ }
 
      h1{
         margin-bottom: 0%;
@@ -31,7 +28,7 @@ body{
      }
 
      input{
-        width: 100;
+        width: 100%;
         padding: 12px;
         margin: 10px 0;
         border: none;
@@ -63,3 +60,49 @@ body{
         margin-top: 15px;
         font-weight: bold;
      }
+
+     body.portal {
+        background: #f0f2f5;
+        display: block;
+        height: auto;
+     }
+
+     nav {
+        background: #2c6fb0;
+        padding: 15px;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+     }
+
+     nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+     }
+
+     .seccion {
+        padding: 25px;
+        background: #f0f2f5;
+        border-radius: 12px;
+        margin: 30px auto;
+        max-width: 550px;
+     }
+
+     #menu {
+         display: flex!important;
+         flex-wrap: wrap;
+         gap: 12px;
+         background: #2c6fb0 !important;
+         padding: 15px;
+         justify-content: center;
+     }
+
+     #menu a {
+         color: white !important;
+         text-decoration: none;
+         font-weight: bold;
+         background: #0d47a1;
+         padding: 15px;
+         border-radius: 6px;
+      }

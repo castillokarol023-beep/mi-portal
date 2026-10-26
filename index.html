@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>Mi portal web</title>
-        <link rel="styleheet" href="style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <div class="caja">
+    <body class="portal">
+        <div class="contenedor">
             <h1>bienvenida a mi portal</h1>
             <form id="loginForm">
             <input id="usuario" placeholder="usuario">
@@ -16,5 +16,188 @@
             </form>
         </div>
         <Script src="main.js"></Script>
+        <!-- Menú de navegación -->
+ <nav id="menu" style="display:none;">
+    <a href="#" onclick="mostrar('inicio')">Inicio</a>
+    <a href="#" onclick="mostrar('estudiante')">Registrar Estudiante</a>
+    <a href="#" onclick="mostrar('docente')">Registrar Docente</a>
+    <a href="#" onclick="mostrar('notas')">Registrar Notas</a>
+    <a href="#" onclick="mostrar('asignatura')">Registrar Asignatura</a>
+    <a href="#" onclick="mostrar('reporte')">Generar Reporte</a>
+</nav>
+<div id="inicio" class="seccion" style="display:none;">
+    <h2>Bienvenido a la plataforma estudiantil</h2>
+    <p>Seleccione una opción del menú para comenzar.</p>
+</div>
+
+<!--1. REGISTRAR ESTUDIANTE-->
+<div id ="estudiante" class="seccion" style="display:none;">
+    <h2>Registro de nuevo Estudiante</h2>
+    <form> 
+        <label>Nombre y Apellido:</label><br>
+        <input type="text" placeholder="EJ: Karol Pérez"required><br><br>
+
+        <label>Tipo de Documento:</label><br>
+        <select required>
+            <option value="">Seleccione...</option>
+            <option>Tarjeta de identidad</option>
+            <option>Cédula de Ciudadanía</option>
+            <option>Registro Civil</option>
+            <option>Pasaporte</option>
+        </select><br><br>
+
+        <label>Número de Documento:</label><br>
+        <input type="number" placeholder="EJ: 101256789"required><br><br>
+
+        <label>Correo del acudiente:</label><br>
+        <input type="email" placeholder="acudiente@correo.com"required><br><br>
+
+        <label>Telefono del acudiente:</label><br>
+        <input type="tel" placeholder="EJ: 3001234567"required><br><br>
+
+        <label>Curso al que Ingresa:</label><br>
+        <select required>
+            <option value="">Seleccione curso...</option>
+            <option>6°</option>
+            <option>7°</option>
+            <option>8°</option>
+            <option>9°</option>
+            <option>10°</option>
+            <option>11°</option>
+        </select><br><br>
+
+        <button type="submit">Registrar Estudiante</button>
+    </form>
+</div>
+
+<!-- 2.REGISTRO DE DOCENTE -->
+ <div id="docente" class="seccion" style="display:none;">
+    <h2>Registro de nuevo Docente</h2>
+    <form>
+        <label>Nombre y Apellido:</label><br>
+        <input type="text" placeholder="Nombre completo"required><br><br>
+
+        <label>Tipo de Documento:</label><br>
+        <select required>
+            <option value="">Seleccione...</option>
+            <option>Cédula de extranjería</option>
+            <option>Cédula de Ciudadanía</option>
+            <option>Pasaporte</option>
+        </select><br><br>
+
+        <label>Número de Documento:</label><br>
+        <input type="number" placeholder="Número de documento"required><br><br>
+
+        <label>Teléfono:</label><br>
+        <input type="tel" placeholder="Número de teléfono"required><br><br>
+
+        <label>Correo electrónico:</label><br>
+        <input type="email" placeholder="Correo electrónico"required><br><br>
+
+        <label>Asignatura que imparte:</label><br>
+        <select required>
+            <option value="">Seleccione asignatura...</option>
+            <option>Matemáticas</option>
+            <option>Lengua Castellana</option>
+            <option>Ciencias Naturales</option>
+            <option>Inglés</option>
+            <option>Educación Física</option>
+        </select><br><br>
+
+        <button type="submit">Registrar Docente</button>
+    </form>
+</div>
+
+<!--3. REGISTRO DE NOTAS-->
+<div id="notas" class="seccion" style="display:none;">
+    <h2>Registro de Notas</h2>
+    <form>
+        <label>Grupo estudiantil:</label><br>
+        <select required>
+            <option value="">Seleccione grupo...</option>
+            <option>6°</option>
+            <option>7°</option>
+            <option>8°</option>
+            <option>9°</option>
+            <option>10°</option>
+            <option>11°</option>
+        </select><br><br>
+
+        <label>Nombre del estudiante:</label><br>
+        <input type="text" placeholder="Ingrese el nombre del estudiante" required><br><br>
+        <label>Asignatura:</label><br>
+        <select required>
+            <option value="">Seleccione asignatura...</option>
+            <option>Matemáticas</option>
+            <option>Lengua Castellana</option>
+            <option>Ciencias Naturales</option>
+            <option>Inglés</option>
+            <option>Educación Física</option>
+        </select><br><br>
+        <label>Nota cuantitativa (0.0 a 5.0):</label><br>
+        <input type="number" placeholder="Ingrese la nota" min="0" max="5" step="0.1" required><br><br>
+        <button type="submit">Registrar Nota</button>
+    </form>
+</div>
+
+<!--4. REGISTRO DE MATERIA -->
+<div id="asignatura" class="seccion" style="display:none;">
+    <h2>Registro de nueva Asignatura</h2>
+    <form>
+        <label>Nombre de la asignatura:</label><br>
+        <input type="text" placeholder="Ingrese el nombre de la asignatura" required><br><br>
+
+        <label>Docente a cargo:</label><br>
+        <select required>
+            <option value="">Seleccione docente...</option>
+            <option>Juan Pérez</option>
+            <option>María Gómez</option>
+            <option>Carlos Rodríguez</option>
+            <option>Ana Martínez</option>
+        </select><br><br>
+
+        <label>Horario:</label><br>
+        <input type="text" placeholder="Ej: Lunes 8:00-10:00" required><br><br>
+
+        <label>Grupos asignados:</label><br>
+        <input type="checkbox"> 6°A<br>
+        <input type="checkbox"> 6°B<br>
+        <input type="checkbox"> 7°A<br>
+        <input type="checkbox"> 7°B<br> 
+
+        <button type="submit">Registrar Asignatura</button>
+    </form>
+</div>
+
+<!-- 5. GENERACIÓN DE REPORTES -->
+ <div id="reporte" class="seccion" style="display:none;">
+    <h2>Generación de Reportes</h2>
+    <form>
+        <label>Grupo estudiantil:</label><br>
+        <select>
+            <option value="">Seleccione grupo...</option>
+            <option>6°</option>
+            <option>7°</option>
+            <option>8°</option>
+            <option>9°</option>
+            <option>10°</option>
+            <option>11°</option>
+        </select><br><br>
+
+        <label>Estudiante:</label><br>
+        <select>
+            <option value="">Seleccione estudiante...</option>
+            <option>Juan Pérez</option>
+            <option>María Gómez</option>
+            <option>Carlos Rodríguez</option>
+            <option>Ana Martínez</option>
+        </select><br><br>
+
+        <p style="font-size: 13px;">Puedes seleccionar un grupo y un estudiante para generar un reporte específico.</p>
+
+        <button type="submit">Generar Reporte</button>
+    </form>
+ </div>
     </body>
 </html>
+

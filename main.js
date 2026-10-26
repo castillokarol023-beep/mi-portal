@@ -1,23 +1,26 @@
-const form =document.getElementById("loginForm");
-const mensaje =document.getElementById("mensaje");
-form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-   
-    const usuario = document.getElementById("usuario").value;
-    const clave =document.getElementById("clave").value;
-     const respuesta = await fetch("/api/login",{
-        method:"POST",
-    Headers:{"Content-Type":"application/json"},
-body: JSON.stringify({ usuario, clave})
-});
-const datos = await respuesta.json();
-mensaje.textContent = datos.mensaje;
-if(datos.ok){
-    mensaje.style.color="#00ff88";
-    setTimeout(() =>{
-        alert("Bienvenido, entraste al portal");
-     }, 500);
-} else {
-    mensaje.style.color = "#ff3b9a";
+let logueado = false;
+
+function mostrar(id) {
+    if (!logueado) {
+        alert("Primero debe iniciar sesión");
+        return;
+    }
+    document.querySelectorAll(".seccion").forEach(s =>s.style.display = "none");
+    document.getElementById(id).style.display = "block";
 }
-})
+
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const u = document.getElementById("usuario").value;
+    const c = document.getElementById("clave").value;
+
+    if (u ==="karol" && c === "1234") {
+        logueado = true;
+        document.querySelector(".contenedor").style.display = "none";
+        document.getElementById("menu").style.display = "flex";
+        document.getElementById("inicio").style.display = "block";
+        alert("Bienvenido al portal");
+    } else {
+        document.getElementById("mensaje").textContent = "Usuario o clave incorrectos";
+    }
+});
